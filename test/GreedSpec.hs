@@ -1,6 +1,5 @@
 module GreedSpec where
 
-
 import Test.Hspec
 
 spec :: Spec 
