@@ -6,7 +6,7 @@ score :: [Int] -> Int
 score [1,1,1] = 1000
 score [a,b,c] | a == b && b == c = a * 100
 score [1,1] = 0
-score (1:_) = 100
+score (1:rest) = 100 + score rest
 score [5] = 50
 score _ = 0
 
@@ -22,3 +22,4 @@ spec = describe "Greed" $ do
     it "triples 2 (200)" $ score [2, 2, 2] `shouldBe` 200
     it "triples 3 (300)" $ score [3,3,3] `shouldBe` 300
     it "single 1 among others (100)" $ score [1,3,6] `shouldBe` 100
+    it "single 1 and then 3 6s (700)" $ score [1,6,6,6] `shouldBe` 700
