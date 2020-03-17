@@ -9,7 +9,7 @@ scoreUnLancer (a : b : c : rest)
 scoreUnLancer (1:rest) = 100 + scoreUnLancer rest
 scoreUnLancer (5:rest) = 50 + scoreUnLancer rest
 scoreUnLancer (_:rest) = scoreUnLancer rest
-scoreUnLancer _ = 0
+scoreUnLancer [] = 0
 
 -- http://codingdojo.org/kata/Greed/
 spec :: Spec 
