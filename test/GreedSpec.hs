@@ -26,4 +26,4 @@ spec = describe "Greed" $ do
         score [1,1] `shouldBe` 0
     
     it "triples 1 (1000)" $
-        score [1,1, 1] `shouldBe` 1000
+        score [1, 1, 1] `shouldBe` 1000
