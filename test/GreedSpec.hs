@@ -7,7 +7,7 @@ score [1,1,1] = 1000
 score [a,b,c] 
     | a == b && b == c = a * 100
 score (1:rest) = 100 + score rest
-score [5] = 50
+score (5:rest) = 50 + score rest
 score _ = 0
 
 -- http://codingdojo.org/kata/Greed/
@@ -23,3 +23,4 @@ spec = describe "Greed" $ do
     it "triples 3 (300)" $ score [3,3,3] `shouldBe` 300
     it "single 1 among others (100)" $ score [1,3,6] `shouldBe` 100
     it "single 1 and then 3 6s (700)" $ score [1,6,6,6] `shouldBe` 700
+    it "two 5s (100)" $ score [5,5] `shouldBe` 100
