@@ -8,6 +8,7 @@ scoreUnLancer (a : b : c : rest)
     | a == b && b == c = a * 100 + scoreUnLancer rest
 scoreUnLancer (1:rest) = 100 + scoreUnLancer rest
 scoreUnLancer (5:rest) = 50 + scoreUnLancer rest
+scoreUnLancer (_:rest) = scoreUnLancer rest
 scoreUnLancer _ = 0
 
 -- http://codingdojo.org/kata/Greed/
@@ -26,5 +27,6 @@ spec = describe "Greed" $ do
     it "two 5s (100)" $ scoreUnLancer [5,5] `shouldBe` 100
     it "three 1 and 2 5s (1100)" $ scoreUnLancer [1,1,1,5,5] `shouldBe` 1100
     it "three 2 and 2 5s (1100)" $ scoreUnLancer [2,2,2,5,5] `shouldBe` 300
+    it "one 2 and 1 5s (50)" $ scoreUnLancer [2,5] `shouldBe` 50
 
     
