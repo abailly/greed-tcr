@@ -5,6 +5,7 @@ import Test.Hspec
 score :: [Int] -> Int
 score [1] = 100
 score [5] = 50
+score _ = 0
 
 -- http://codingdojo.org/kata/Greed/
 spec :: Spec 
@@ -15,3 +16,6 @@ spec = describe "Greed" $ do
 
     it "A single five (50)" $ do
         score [5] `shouldBe` 50
+
+    it "A single two (0)" $ do
+        score [2] `shouldBe` 0
