@@ -3,7 +3,7 @@ module GreedSpec where
 import Test.Hspec
 
 data Die = One | Two | Three | Four | Five | Six 
-  deriving (Eq, Show, Enum)
+  deriving (Eq, Show, Enum, Ord)
 
 scoreUnLancer :: [Int] -> Int
 scoreUnLancer [1,1,1] = 1000
