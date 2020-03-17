@@ -3,7 +3,7 @@ module GreedSpec where
 import Test.Hspec
 
 scoreUnLancer :: [Int] -> Int
-scoreUnLancer [1,1,1] = 1000
+scoreUnLancer (1 : 1 : 1 : rest) = 1000 + scoreUnLancer rest
 scoreUnLancer [a,b,c] 
     | a == b && b == c = a * 100
 scoreUnLancer (1:rest) = 100 + scoreUnLancer rest
@@ -24,4 +24,5 @@ spec = describe "Greed" $ do
     it "single 1 among others (100)" $ scoreUnLancer [1,3,6] `shouldBe` 100
     it "single 1 and then 3 6s (700)" $ scoreUnLancer [1,6,6,6] `shouldBe` 700
     it "two 5s (100)" $ scoreUnLancer [5,5] `shouldBe` 100
+    it "three 1 and 2 5s (1100)" $ scoreUnLancer [1,1,1,5,5] `shouldBe` 1100
     
