@@ -26,4 +26,5 @@ spec = describe "Greed" $ do
     it "two 5s (100)" $ scoreUnLancer [5,5] `shouldBe` 100
     it "three 1 and 2 5s (1100)" $ scoreUnLancer [1,1,1,5,5] `shouldBe` 1100
     it "three 2 and 2 5s (1100)" $ scoreUnLancer [2,2,2,5,5] `shouldBe` 300
+
     
