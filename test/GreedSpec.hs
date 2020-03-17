@@ -3,6 +3,7 @@ module GreedSpec where
 import Test.Hspec
 
 score :: [Int] -> Int
+score [1,1,1] = 1000
 score [1,1] = 0
 score [1] = 100
 score [5] = 50
@@ -23,3 +24,6 @@ spec = describe "Greed" $ do
 
     it "two 1s (0)" $ do
         score [1,1] `shouldBe` 0
+    
+    it "triples 1 (1000)" $
+        score [1,1, 1] `shouldBe` 1000
