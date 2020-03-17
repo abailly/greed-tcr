@@ -4,8 +4,7 @@ import Test.Hspec
 
 score :: [Int] -> Int
 score [1,1,1] = 1000
-score [3,3,3] = 300
-score [2,2,2] = 200
+score [a,b, c] | a == b && b == c = a * 100
 score [1,1] = 0
 score [1] = 100
 score [5] = 50
