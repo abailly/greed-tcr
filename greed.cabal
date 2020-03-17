@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 48337d5753605016350e99181797bea4d130493387533113fa4e0db68b4b5e28
+-- hash: 1c54003c62cd3f7b2a4a386c13bf0fbbc53ba56d34a9f206baf588c35afcd43a
 
 name:           greed
 version:        0.1.0.0
@@ -52,6 +52,7 @@ test-suite greed-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      GreedSpec
       Paths_greed
   hs-source-dirs:
       test
