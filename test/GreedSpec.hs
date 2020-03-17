@@ -2,23 +2,13 @@ module GreedSpec where
 
 import Test.Hspec
 
-data Die = One | Two | Three | Four | Five | Six 
-  deriving (Eq, Show, Enum, Ord)
-
-type Lancer = [Die]
-
 scoreUnLancer :: [Int] -> Int
-scoreUnLancer ints = scoreUn (fmap (toEnum . decrement) ints)
-    where
-        decrement i = i - 1
-        
-        scoreUn :: Lancer -> Int
-        scoreUn [One,One,One] = 1000
-        scoreUn [a,b,c] 
-            | a == b && b == c = (fromEnum a + 1) * 100
-        scoreUn (One:rest) = 100 + scoreUn rest
-        scoreUn (Five:rest) = 50 + scoreUn rest
-        scoreUn _ = 0
+scoreUnLancer [1,1,1] = 1000
+scoreUnLancer [a,b,c] 
+    | a == b && b == c = a * 100
+scoreUnLancer (1:rest) = 100 + scoreUnLancer rest
+scoreUnLancer (5:rest) = 50 + scoreUnLancer rest
+scoreUnLancer _ = 0
 
 -- http://codingdojo.org/kata/Greed/
 spec :: Spec 
