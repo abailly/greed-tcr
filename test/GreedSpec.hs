@@ -12,6 +12,7 @@ scoreUnLancer (_:rest) = scoreUnLancer rest
 scoreUnLancer [] = 0
 
 -- http://codingdojo.org/kata/Greed/
+-- https://en.wikipedia.org/wiki/Farkle
 spec :: Spec 
 spec = describe "Greed" $ do
 
